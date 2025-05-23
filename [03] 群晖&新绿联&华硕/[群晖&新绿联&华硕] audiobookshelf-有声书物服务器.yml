@@ -17,13 +17,13 @@ services:
     hostname: audiobookshelf
     # 主机名
     volumes:
-      - /volume1/docker/audiobookshelf/config:/config
+      - /volume1/homes/ytt_software/audiobookshelf/config:/config
       # 配置文件目录
-      - /volume1/docker/audiobookshelf/metadata:/metadata
+      - /volume1/homes/ytt_software/audiobookshelf/metadata:/metadata
       # 元数据目录
-      - 【这里替换为你的数据存放目录】/有声读物:/audiobooks
+      - /volume1/homes/ytt_software/audiobookshelf/audiobooks:/audiobooks
       # 有声读物目录
-      - 【这里替换为你的数据存放目录】/播客:/podcasts
+      - /volume1/homes/ytt_software/audiobookshelf/podcasts:/podcasts
       # 播客目录
     environment:
       - PORT=13378

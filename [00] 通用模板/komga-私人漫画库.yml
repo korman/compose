@@ -19,13 +19,13 @@ services:
     hostname: komga
     # 主机名
     volumes:
-      - 【这里替换为你的docker数据存放目录】/komga:/config
+      - /volume1/docker/komga_data:/config
       # 配置文件目录
-      - 【这里替换为你的数据存放目录】:/comic
+      - /volume1/komga:/comic
       # 漫画存放的目录，映射本地其他路径使其可以访问，可以自定义多个
       # - 【这里替换为你的数据存放目录】:/【这里替换为你的数据存放目录的的名字】
     environment:
-      - PUID=1000
+      - PUID=1026
       - PGID=100
       # 用户和用户组权限，ssh中使用“id 用户名”查看，用户组一般为100(users)
       # 第一个用户而言，群晖为1026，新绿联为1001，linux类系统为1000，后续用户均+1

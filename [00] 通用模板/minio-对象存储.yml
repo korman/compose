@@ -19,12 +19,12 @@ services:
     # /minio为对象存储的目录
     # 9090为WebUI容器端口
     volumes:
-      - 【这里替换为你的docker数据存放目录】/MinIO:/data
+      - /volume1/docker/minio_data:/data
       # 配置文件目录
-      - 【这里替换为你的数据存放目录】/MinIO:/minio
+      - /volume1/minio:/minio
       # 对象存储的目录
     environment:
-      - PUID=1000
+      - PUID=1026
       - PGID=100
       # 用户和用户组权限，ssh中使用“id 用户名”查看，用户组一般为100(users)
       # 第一个用户而言，群晖为1026，新绿联为1001，linux类系统为1000，后续用户均+1
@@ -32,8 +32,8 @@ services:
       # 默认创建新文件的权限，一般写022
       - TZ=Asia/Shanghai
       # 时区
-      - MINIO_ROOT_USER=这里写你的用户名字
-      - MINIO_ROOT_PASSWORD=新建一个密码
+      - MINIO_ROOT_USER=korman
+      - MINIO_ROOT_PASSWORD=Aa11223344
       # MINIO的管理者账号和密码
     # network_mode: bridge
     network_mode: host

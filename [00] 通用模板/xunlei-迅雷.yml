@@ -16,9 +16,9 @@ services:
     privileged: true
     # 特权，赋予容器与主机几乎一致的权限，必须开启
     volumes:
-      - 【这里替换为你的docker数据存放目录】/xunlei:/xunlei/data
+      - /volume1/docker/xunlei_data:/xunlei/data
       # 配置文件目录
-      - 【这里替换为你的数据下载目录】:/xunlei/downloads
+      - /volume1/xunlei_download:/xunlei/downloads
       # 下载目录
       # 可以自定义，可以写多个
     environment:
@@ -27,7 +27,7 @@ services:
       # - XL_DASHBOADR_USER=xunlei
       # - XL_DASHBOADR_PASSWORD=xunlei
       # 设置迅雷WebUI的访问账号密码，可以不设，预设为xunlei
-      - XL_UID=1000
+      - XL_UID=1026
       - XL_GID=100
       # 迅雷的用户、用户组权限
       # 用户和用户组权限，ssh中使用“id 用户名”查看，用户组一般为100(users)
